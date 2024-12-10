@@ -1,4 +1,4 @@
-package racingcar;
+package racingcar.controller;
 
 import racingcar.common.dto.GameResult;
 import racingcar.common.dto.WinnerResult;
