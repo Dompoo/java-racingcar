@@ -1,4 +1,4 @@
-package racingcar.exception;
+package racingcar.common.exception;
 
 public enum CustomExceptions {
 	

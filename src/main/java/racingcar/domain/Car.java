@@ -1,9 +1,9 @@
 package racingcar.domain;
 
+import racingcar.common.dto.CarStatus;
+import racingcar.common.dto.MoveResult;
+import racingcar.common.exception.CustomExceptions;
 import racingcar.domain.moveCommandProvider.MoveCommandProvider;
-import racingcar.dto.CarStatus;
-import racingcar.dto.MoveResult;
-import racingcar.exception.CustomExceptions;
 
 import java.util.Objects;
 

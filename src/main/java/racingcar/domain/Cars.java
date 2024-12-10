@@ -1,10 +1,10 @@
 package racingcar.domain;
 
+import racingcar.common.dto.CarStatus;
+import racingcar.common.dto.LapResult;
+import racingcar.common.dto.MoveResult;
+import racingcar.common.exception.CustomExceptions;
 import racingcar.domain.moveCommandProvider.MoveCommandProvider;
-import racingcar.dto.CarStatus;
-import racingcar.dto.LapResult;
-import racingcar.dto.MoveResult;
-import racingcar.exception.CustomExceptions;
 
 import java.util.ArrayList;
 import java.util.HashSet;

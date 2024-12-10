@@ -1,9 +1,9 @@
 package racingcar.domain;
 
+import racingcar.common.dto.GameResult;
+import racingcar.common.dto.LapResult;
+import racingcar.common.exception.CustomExceptions;
 import racingcar.domain.moveCommandProvider.MoveCommandProvider;
-import racingcar.dto.GameResult;
-import racingcar.dto.LapResult;
-import racingcar.exception.CustomExceptions;
 
 import java.util.ArrayList;
 import java.util.List;

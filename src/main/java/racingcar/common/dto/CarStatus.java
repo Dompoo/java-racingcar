@@ -1,4 +1,4 @@
-package racingcar.dto;
+package racingcar.common.dto;
 
 public record CarStatus(
 		String name,

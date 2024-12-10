@@ -1,7 +1,7 @@
 package racingcar.domain;
 
-import racingcar.dto.CarStatus;
-import racingcar.dto.WinnerResult;
+import racingcar.common.dto.CarStatus;
+import racingcar.common.dto.WinnerResult;
 
 import java.util.List;
 import java.util.Objects;
