@@ -11,7 +11,7 @@ public class OutputParser {
 	
 	public String parseGameResult(GameResult gameResult) {
 		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append("실행 결과\n");
+		stringBuilder.append("\n실행 결과\n");
 		for (LapResult lapResult : gameResult.lapResults()) {
 			stringBuilder.append(parseLapResult(lapResult));
 			stringBuilder.append("\n");
