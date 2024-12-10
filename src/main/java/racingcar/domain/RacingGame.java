@@ -11,7 +11,7 @@ import java.util.Objects;
 
 public class RacingGame {
 	
-	private static final int MIN_LAP_COUNT = 3;
+	private static final int MIN_LAP_COUNT = 1;
 	private static final int MAX_LAP_COUNT = 30;
 	
 	private final Cars cars;
