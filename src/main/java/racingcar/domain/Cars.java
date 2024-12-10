@@ -1,8 +1,8 @@
 package racingcar.domain;
 
 import racingcar.domain.moveCommandProvider.MoveCommandProvider;
-import racingcar.dto.CarStatus;
-import racingcar.dto.LapStatus;
+import racingcar.dto.LapResult;
+import racingcar.dto.MoveResult;
 import racingcar.exception.CustomExceptions;
 
 import java.util.ArrayList;
@@ -16,14 +16,11 @@ public class Cars {
 	private static final int MAX_CAR_COUNT = 30;
 
 	private final List<Car> cars;
-	private final MoveCommandProvider moveCommandProvider;
 	
-	private Cars(List<Car> cars, MoveCommandProvider moveCommandProvider) {
+	private Cars(List<Car> cars) {
 		Objects.requireNonNull(cars);
-		Objects.requireNonNull(moveCommandProvider);
 		validate(cars);
 		this.cars = cars;
-		this.moveCommandProvider = moveCommandProvider;
 	}
 	
 	private static void validate(List<Car> cars) {
@@ -32,13 +29,13 @@ public class Cars {
 		}
 	}
 	
-	public static Cars from(List<String> carNames, MoveCommandProvider moveCommandProvider) {
+	public static Cars from(List<String> carNames) {
 		Objects.requireNonNull(carNames);
 		validateCarNameDuplication(carNames);
 		List<Car> cars = carNames.stream()
 				.map(Car::from)
 				.toList();
-		return new Cars(cars, moveCommandProvider);
+		return new Cars(cars);
 	}
 	
 	private static void validateCarNameDuplication(List<String> carNames) {
@@ -47,12 +44,12 @@ public class Cars {
 		}
 	}
 	
-	public LapStatus playOneLap() {
-		List<CarStatus> carStatuses = new ArrayList<>();
+	public LapResult playOneLap(MoveCommandProvider moveCommandProvider) {
+		List<MoveResult> moveResults = new ArrayList<>();
 		for (Car car : cars) {
-			CarStatus carStatus = car.move(moveCommandProvider);
-			carStatuses.add(carStatus);
+			MoveResult moveResult = car.move(moveCommandProvider);
+			moveResults.add(moveResult);
 		}
-		return new LapStatus(carStatuses);
+		return new LapResult(moveResults);
 	}
 }

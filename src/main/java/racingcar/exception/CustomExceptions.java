@@ -2,6 +2,10 @@ package racingcar.exception;
 
 public enum CustomExceptions {
 	
+	INVALID_LAP_COUNT(
+			"시도할 회수는 %d~%d번 사이 입니다.",
+			IllegalArgumentException.class
+	),
 	INVALID_CAR_NAME_LENGTH(
 			"자동차 이름은 최대 %d자 입니다.",
 			IllegalArgumentException.class

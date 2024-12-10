@@ -1,6 +1,6 @@
 package racingcar.dto;
 
-public record CarStatus(
+public record MoveResult(
 		String name,
 		int position
 ) {

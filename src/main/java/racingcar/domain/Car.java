@@ -1,7 +1,7 @@
 package racingcar.domain;
 
 import racingcar.domain.moveCommandProvider.MoveCommandProvider;
-import racingcar.dto.CarStatus;
+import racingcar.dto.MoveResult;
 import racingcar.exception.CustomExceptions;
 
 import java.util.Objects;
@@ -31,10 +31,10 @@ public class Car {
 		return new Car(name, INITIAL_POSITION);
 	}
 	
-	public CarStatus move(MoveCommandProvider moveCommandProvider) {
+	public MoveResult move(MoveCommandProvider moveCommandProvider) {
 		if (moveCommandProvider.canMove()) {
 			position++;
 		}
-		return new CarStatus(name, position);
+		return new MoveResult(name, position);
 	}
 }
