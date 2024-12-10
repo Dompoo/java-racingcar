@@ -1,5 +1,6 @@
 package racingcar.domain;
 
+import racingcar.domain.moveCommandProvider.MoveCommandProvider;
 import racingcar.dto.CarStatus;
 import racingcar.exception.CustomExceptions;
 

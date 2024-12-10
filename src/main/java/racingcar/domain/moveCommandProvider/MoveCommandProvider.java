@@ -1,4 +1,4 @@
-package racingcar.domain;
+package racingcar.domain.moveCommandProvider;
 
 public interface MoveCommandProvider {
 

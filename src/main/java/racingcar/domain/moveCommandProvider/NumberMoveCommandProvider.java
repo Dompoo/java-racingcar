@@ -1,6 +1,6 @@
-package racingcar.domain;
+package racingcar.domain.moveCommandProvider;
 
-import racingcar.service.NumberProvider;
+import racingcar.service.numberProvider.NumberProvider;
 
 public class NumberMoveCommandProvider implements MoveCommandProvider {
 	
