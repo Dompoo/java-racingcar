@@ -6,16 +6,21 @@ import java.util.Objects;
 
 public class Car {
 	
+	private static final int INITIAL_POSITION = 0;
 	private static final int MAX_NAME_LENGTH = 5;
 	
 	private final String name;
 	private final int position;
 	
-	public Car(String name, int position) {
+	private Car(String name, int position) {
 		Objects.requireNonNull(name);
 		validate(name);
 		this.name = name;
 		this.position = position;
+	}
+	
+	public static Car from(String name) {
+		return new Car(name, INITIAL_POSITION);
 	}
 	
 	private static void validate(String name) {
