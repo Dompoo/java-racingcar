@@ -1,6 +1,7 @@
 package racingcar.domain;
 
 import racingcar.domain.moveCommandProvider.MoveCommandProvider;
+import racingcar.dto.CarStatus;
 import racingcar.dto.LapResult;
 import racingcar.dto.MoveResult;
 import racingcar.exception.CustomExceptions;
@@ -51,5 +52,11 @@ public class Cars {
 			moveResults.add(moveResult);
 		}
 		return new LapResult(moveResults);
+	}
+	
+	public List<CarStatus> getCarStatuses() {
+		return cars.stream()
+				.map(Car::getCarStatus)
+				.toList();
 	}
 }

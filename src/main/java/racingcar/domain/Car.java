@@ -1,6 +1,7 @@
 package racingcar.domain;
 
 import racingcar.domain.moveCommandProvider.MoveCommandProvider;
+import racingcar.dto.CarStatus;
 import racingcar.dto.MoveResult;
 import racingcar.exception.CustomExceptions;
 
@@ -36,5 +37,9 @@ public class Car {
 			position++;
 		}
 		return new MoveResult(name, position);
+	}
+	
+	public CarStatus getCarStatus() {
+		return new CarStatus(name, position);
 	}
 }
