@@ -6,6 +6,10 @@ public enum CustomExceptions {
 			"자동차 이름 입력 포맷이 잘못되었습니다.",
 			IllegalArgumentException.class
 	),
+	ILLEGAL_LAP_COUNT_INPUT(
+			"시도 회수 입력 포맷이 잘못되었습니다.",
+			IllegalArgumentException.class
+	),
 	INVALID_LAP_COUNT(
 			"시도할 회수는 %d~%d번 사이 입니다.",
 			IllegalArgumentException.class
@@ -21,8 +25,7 @@ public enum CustomExceptions {
 	INVALID_CAR_COUNT(
 			"자동차 개수는 %d~%d개 입니다.",
 			IllegalArgumentException.class
-	),
-	;
+	);
 	
 	private final String message;
 	private final Class<? extends RuntimeException> exceptionType;

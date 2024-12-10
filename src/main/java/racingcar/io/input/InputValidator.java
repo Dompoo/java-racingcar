@@ -13,4 +13,12 @@ public class InputValidator {
 			throw CustomExceptions.ILLEGAL_CAR_NAME_INPUT.get();
 		}
 	}
+	
+	public void validateLapCount(String lapCountInput) {
+		try {
+			Integer.parseInt(lapCountInput);
+		} catch (IllegalArgumentException e) {
+			throw CustomExceptions.ILLEGAL_LAP_COUNT_INPUT.get();
+		}
+	}
 }

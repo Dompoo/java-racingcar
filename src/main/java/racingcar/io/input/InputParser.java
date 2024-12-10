@@ -10,4 +10,8 @@ public class InputParser {
 				.map(String::trim)
 				.toList();
 	}
+	
+	public int parseLapCount(String lapCountInput) {
+		return Integer.parseInt(lapCountInput);
+	}
 }

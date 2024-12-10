@@ -25,4 +25,11 @@ public class InputHandler {
 		inputValidator.validateCarNames(carNamesInput);
 		return inputParser.parseCarNames(carNamesInput);
 	}
+	
+	public int handleLapCount() {
+		writer.write("시도할 회수는 몇회인가요");
+		String lapCountInput = reader.readLine();
+		inputValidator.validateLapCount(lapCountInput);
+		return inputParser.parseLapCount(lapCountInput);
+	}
 }
