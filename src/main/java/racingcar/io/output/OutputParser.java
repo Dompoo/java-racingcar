@@ -3,6 +3,9 @@ package racingcar.io.output;
 import racingcar.common.dto.GameResult;
 import racingcar.common.dto.LapResult;
 import racingcar.common.dto.MoveResult;
+import racingcar.common.dto.WinnerResult;
+
+import java.util.StringJoiner;
 
 public class OutputParser {
 	
@@ -26,10 +29,14 @@ public class OutputParser {
 	}
 	
 	private String parseMoveResult(MoveResult moveResult) {
-		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append(moveResult.name());
-		stringBuilder.append(" : ");
-		stringBuilder.append("-".repeat(moveResult.position()));
-		return stringBuilder.toString();
+		return moveResult.name() + " : " + "-".repeat(moveResult.position());
+	}
+	
+	public String parseWinnerResult(WinnerResult winnerResult) {
+		StringJoiner winnerNameJoiner = new StringJoiner(", ");
+		for (String winnerName : winnerResult.winnerNames()) {
+			winnerNameJoiner.add(winnerName);
+		}
+		return "최종 우승자 : " + winnerNameJoiner;
 	}
 }

@@ -1,6 +1,7 @@
 package racingcar.io.output;
 
 import racingcar.common.dto.GameResult;
+import racingcar.common.dto.WinnerResult;
 import racingcar.io.writer.Writer;
 
 public class OutputHandler {
@@ -15,6 +16,11 @@ public class OutputHandler {
 	
 	public void handleGameResult(GameResult gameResult) {
 		String result = outputParser.parseGameResult(gameResult);
+		writer.write(result);
+	}
+	
+	public void handleWinnerResult(WinnerResult winnerResult) {
+		String result = outputParser.parseWinnerResult(winnerResult);
 		writer.write(result);
 	}
 }
