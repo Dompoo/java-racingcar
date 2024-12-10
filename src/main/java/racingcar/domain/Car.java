@@ -10,6 +10,7 @@ import java.util.Objects;
 public class Car {
 	
 	private static final int INITIAL_POSITION = 0;
+	private static final int MIN_NAME_LENGTH = 2;
 	private static final int MAX_NAME_LENGTH = 5;
 	
 	private final String name;
@@ -23,8 +24,8 @@ public class Car {
 	}
 	
 	private static void validate(String name) {
-		if (name.length() > MAX_NAME_LENGTH) {
-			throw CustomExceptions.INVALID_CAR_NAME_LENGTH.get(MAX_NAME_LENGTH);
+		if (name.length() > MAX_NAME_LENGTH || name.length() < MIN_NAME_LENGTH) {
+			throw CustomExceptions.INVALID_CAR_NAME_LENGTH.get(MAX_NAME_LENGTH, MIN_NAME_LENGTH);
 		}
 	}
 	
