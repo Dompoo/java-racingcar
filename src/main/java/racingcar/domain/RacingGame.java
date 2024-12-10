@@ -15,15 +15,12 @@ public class RacingGame {
 	private static final int MAX_LAP_COUNT = 30;
 	
 	private final Cars cars;
-	private final MoveCommandProvider moveCommandProvider;
 	private final int lapCount;
 	
-	public RacingGame(Cars cars, MoveCommandProvider moveCommandProvider, int lapCount) {
+	public RacingGame(Cars cars, int lapCount) {
 		Objects.requireNonNull(cars);
-		Objects.requireNonNull(moveCommandProvider);
 		validate(lapCount);
 		this.cars = cars;
-		this.moveCommandProvider = moveCommandProvider;
 		this.lapCount = lapCount;
 	}
 	
@@ -33,7 +30,7 @@ public class RacingGame {
 		}
 	}
 	
-	public GameResult play() {
+	public GameResult play(MoveCommandProvider moveCommandProvider) {
 		List<LapResult> lapResults = new ArrayList<>();
 		for (int lap = 0; lap < lapCount; lap++) {
 			LapResult lapResult = cars.playOneLap(moveCommandProvider);
