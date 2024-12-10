@@ -20,7 +20,7 @@ public class Car {
 	
 	private static void validate(String name) {
 		if (name.length() > MAX_NAME_LENGTH) {
-			throw CustomExceptions.CAR_NAME_LENGTH_EXCEED.get(MAX_NAME_LENGTH);
+			throw CustomExceptions.INVALID_CAR_NAME_LENGTH.get(MAX_NAME_LENGTH);
 		}
 	}
 }

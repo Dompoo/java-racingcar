@@ -2,8 +2,12 @@ package racingcar.exception;
 
 public enum CustomExceptions {
 	
-	CAR_NAME_LENGTH_EXCEED(
+	INVALID_CAR_NAME_LENGTH(
 			"자동차 이름은 최대 %d자 입니다.",
+			IllegalArgumentException.class
+	),
+	INVALID_CAR_COUNT(
+			"자동차 개수는 %d~%d개 입니다.",
 			IllegalArgumentException.class
 	),
 	;
